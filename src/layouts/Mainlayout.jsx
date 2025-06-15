@@ -7,7 +7,7 @@ const Mainlayout = () => {
         <div>
             <Header></Header>
             <Outlet></Outlet>
-            Main
+           
         </div>
     );
 };
