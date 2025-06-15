@@ -4,15 +4,6 @@
 
 //     const {title, description, marks, thumbnail, difficulty} = assignment;
 
-
-
-
-
-
-
-
-
-
 //   return (
 //     <div className="card card-side bg-base-100 shadow-sm">
 //       <figure>
@@ -34,18 +25,12 @@
 
 // export default AssignmentCard;
 
-
-
-
-
 // import React from "react";
 // import { Pencil, Trash2, Eye } from "lucide-react";
 // import Swal from "sweetalert2";
 
 // const AssignmentCard = ({ assignment }) => {
 //   const {_id, title, description, marks, thumbnail, difficulty } = assignment;
-  
-
 
 //   const handleDelete = (_id) => {
 //     console.log(_id)
@@ -69,7 +54,6 @@
 //       console.log(data)
 //     })
 
-
 //     Swal.fire({
 //       title: "Deleted!",
 //       text: "Your file has been deleted.",
@@ -78,8 +62,6 @@
 //   }
 // });
 //   }
-
-
 
 //   const difficultyColors = {
 //     easy: "bg-green-500",
@@ -140,23 +122,22 @@
 
 // export default AssignmentCard;
 
-
-
-
-
-
-
-
 import React, { useContext } from "react";
 import { Pencil, Trash2, Eye } from "lucide-react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router";
-// import { AuthContext } from "../context/AuthContext"; 
+// import { AuthContext } from "../context/AuthContext";
 
-const AssignmentCard = ({ assignment, onDelete, assignments, setAssignments  }) => {
+const AssignmentCard = ({
+  assignment,
+  onDelete,
+  assignments,
+  setAssignments,
+}) => {
   const { user } = useContext(AuthContext);
-  const { _id, title, description, marks, thumbnail, difficulty, createdBy } = assignment;
+  const { _id, title, description, marks, thumbnail, difficulty, createdBy } =
+    assignment;
 
   const handleDelete = (_id) => {
     if (user?.email !== createdBy) {
@@ -184,11 +165,17 @@ const AssignmentCard = ({ assignment, onDelete, assignments, setAssignments  }) 
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your assignment has been deleted.", "success");
+              Swal.fire(
+                "Deleted!",
+                "Your assignment has been deleted.",
+                "success"
+              );
               onDelete(_id);
             }
 
-            const remainingAssignments = assignments.filter(ass => ass._id !== _id)
+            const remainingAssignments = assignments.filter(
+              (ass) => ass._id !== _id
+            );
             setAssignments(remainingAssignments);
           });
       }
@@ -215,19 +202,29 @@ const AssignmentCard = ({ assignment, onDelete, assignments, setAssignments  }) 
           <h2 className="text-2xl font-bold">{title}</h2>
           <p className="text-gray-700">{description}</p>
           <p className="text-sm text-indigo-600">Marks: {marks}</p>
-          <p className={`text-xs font-semibold px-3 py-1 mt-2 rounded-full ${difficultyColors[difficulty?.toLowerCase()]}`}>
+          <p
+            className={`text-xs font-semibold px-3 py-1 mt-2 rounded-full ${
+              difficultyColors[difficulty?.toLowerCase()]
+            }`}
+          >
             {difficulty}
           </p>
         </div>
         <div className="flex justify-end gap-2 mt-4">
           <Link to={`/assignments/${_id}`}>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-1">
-            <Eye size={16} /> View
-          </button></Link>
-          <button className="bg-yellow-500 text-white px-4 py-2 rounded-md flex items-center gap-1">
-            <Pencil size={16} /> Update
-          </button>
-          <button onClick={() => handleDelete(_id)} className="bg-red-600 text-white px-4 py-2 rounded-md flex items-center gap-1">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-1">
+              <Eye size={16} /> View
+            </button>
+          </Link>
+          <Link to={`/update-assignment/${_id}`}>
+            <button className="bg-yellow-500 text-white px-4 py-2 rounded-md flex items-center gap-1">
+              <Pencil size={16} /> Update
+            </button>
+          </Link>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="bg-red-600 text-white px-4 py-2 rounded-md flex items-center gap-1"
+          >
             <Trash2 size={16} /> Delete
           </button>
         </div>
@@ -237,7 +234,3 @@ const AssignmentCard = ({ assignment, onDelete, assignments, setAssignments  }) 
 };
 
 export default AssignmentCard;
-
-
-
-
