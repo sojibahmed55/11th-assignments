@@ -7,6 +7,7 @@ import CreateAssignment from "../components/CreateAssignment";
 import Assignments from "../components/Assignments";
 import ViewAssignment from "../components/ViewAssignment";
 import UpdateAssignment from "../components/UpdateAssignment";
+import MyAttempts from "../components/MyAttempts";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         Component: Register,
       },
       {
+        path: "/my-attempts",
+        Component:  MyAttempts,
+      },
+      {
         path: "/create-assignment",
         Component: CreateAssignment,
       },
@@ -36,8 +41,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/assignments/:id',
+        loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`),
         Component: ViewAssignment,
       },
+      // {
+      //   path: '/assignments/view/:id',
+      //   loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`),
+      //   Component: ViewAssignment,
+      // },
       {
         path: '/assignments',
         loader: () => fetch('http://localhost:5000/assignments'),
