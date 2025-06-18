@@ -8,6 +8,8 @@ import Assignments from "../components/Assignments";
 import ViewAssignment from "../components/ViewAssignment";
 import UpdateAssignment from "../components/UpdateAssignment";
 import MyAttempts from "../components/MyAttempts";
+import Pending from "../pages/Private/Pending";
+import RequireAuth from "../context/RequireAuth";
 
 const router = createBrowserRouter([
   {
@@ -28,28 +30,26 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-attempts",
-        Component:  MyAttempts,
+        Component: MyAttempts,
+      },
+      {
+        path: "/pending-assignment",
+        element: <RequireAuth ><Pending /></RequireAuth>,
       },
       {
         path: "/create-assignment",
-        Component: CreateAssignment,
+        element: <RequireAuth ><CreateAssignment /></RequireAuth>,
       },
       {
         path: '/update-assignment/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
         Component: UpdateAssignment,
       },
       {
         path: '/assignments/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`),
-        Component: ViewAssignment,
-      },
-      // {
-      //   path: '/assignments/view/:id',
-      //   loader: ({params}) => fetch(`http://localhost:5000/assignments/${params.id}`),
-      //   Component: ViewAssignment,
-      // },
-      {
+        loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+        element: <RequireAuth ><ViewAssignment /></RequireAuth>,
+      }, {
         path: '/assignments',
         loader: () => fetch('http://localhost:5000/assignments'),
         Component: Assignments,
