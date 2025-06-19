@@ -109,7 +109,7 @@ const AssignmentSection = () => {
       </section>
 
       <section>
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-700 tracking-wide">
+        <h2 className="text-4xl font-bold text-center mb-12 text-cyan-700 tracking-wide">
           📋 Latest Assignments
         </h2>
         <motion.div

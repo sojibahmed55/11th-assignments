@@ -10,7 +10,6 @@ const Hero = () => {
     <div className=" min-h-screen flex items-center justify-center px-6 md:px-20 relative overflow-hidden">
       <div className="max-w-[1600px] w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
-        {/* Left Text Section */}
         <motion.div
           className="space-y-5"
           initial={{ opacity: 0, x: -50 }}
@@ -74,7 +73,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll to Explore with bounce effect */}
       <motion.div
         className="absolute bottom-8 text-center text-xl text-emerald-600"
         animate={{ y: [0, -8, 0] }}

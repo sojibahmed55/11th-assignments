@@ -28,7 +28,7 @@ const ServicesSec = () => {
         <p className="text-indigo-600 font-semibold tracking-wide uppercase mb-2">
           Excellent Service
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-snug mb-14">
+        <h2 className="text-3xl sm:text-4xl font-bold text-amber-400 leading-snug mb-14">
           Get Only New And Unique Boots Your <br className="hidden md:block" /> Edocoda Online Learning!
         </h2>
 
