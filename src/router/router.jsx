@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-attempts",
-        Component: MyAttempts,
+        element: <RequireAuth><MyAttempts></MyAttempts></RequireAuth> ,
       },
       {
         path: "/pending-assignment",

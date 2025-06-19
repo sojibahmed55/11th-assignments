@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRightCircle } from "lucide-react";
@@ -43,11 +44,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
-const stats = [
-  { label: "Total Assignments", value: 18, color: "text-blue-600" },
-  { label: "Submitted", value: 12, color: "text-green-600" },
-  { label: "Pending", value: 6, color: "text-pink-600" },
-];
+
 
 const AnimatedCounter = ({ value }) => {
   const [count, setCount] = React.useState(0);
@@ -150,32 +147,36 @@ const AssignmentSection = () => {
         </motion.div>
       </section>
 
-     <section className="bg-gradient-to-r from-pink-50 via-purple-50 to-blue-50 py-16 rounded-3xl shadow-inner">
-  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
-    
+      <section className="bg-gradient-to-r from-pink-50 via-purple-50 to-blue-50 py-16 rounded-3xl shadow-inner">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
 
-    <div className="md:flex-1 text-center md:text-left">
-      <h3 className="text-6xl font-extrabold text-pink-600 drop-shadow-lg">
-        Total Assignment{data.length>1?'s':''}: <span className="text-blue-600">{data.length}</span>
-      </h3>
-      <p className="mt-4 text-lg font-semibold text-gray-700 italic max-w-md mx-auto md:mx-0">
-        Every assignment you submit is a step closer to mastery — a brick in your fortress of knowledge, a ripple in the ocean of your future success.
-      </p>
-    </div>
+          <div className="md:flex-1 text-center md:text-left">
+            <h3 className="text-6xl font-extrabold text-pink-600 drop-shadow-lg">
+              Total Assignment{data.length > 1 ? "s" : ""}: <span className="text-blue-600">{data.length}</span>
+            </h3>
+            <p className="mt-4 text-lg font-semibold text-gray-700 italic max-w-md mx-auto md:mx-0">
+              Every assignment you submit is a step closer to mastery — a brick in your fortress of knowledge, a ripple in the ocean of your future success.
+            </p>
+          </div>
 
-    <div className="md:flex-1 bg-white bg-opacity-60 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-pink-300 max-w-md text-gray-800 font-medium leading-relaxed tracking-wide text-center">
-      <p>
-        ✨ <span className="text-pink-600 font-bold">Did you know?</span>  
-        Assignments are not just tasks — they are your personal battlegrounds where skills sharpen and confidence ignites.  
-        Embrace the grind, cherish the challenge, and watch how every effort blooms into brilliance.
-      </p>
-    </div>
+          <div className="md:flex-1 bg-white bg-opacity-60 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-pink-300 max-w-md text-gray-800 font-medium leading-relaxed tracking-wide text-center">
+            <p>
+              ✨ <span className="text-pink-600 font-bold">Did you know?</span>  
+              Assignments are not just tasks — they are your personal battlegrounds where skills sharpen and confidence ignites.  
+              Embrace the grind, cherish the challenge, and watch how every effort blooms into brilliance.
+            </p>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
     </div>
   );
 };
 
 export default AssignmentSection;
+
+
+
+
+

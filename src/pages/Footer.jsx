@@ -11,7 +11,6 @@ const Footer = () => {
     <footer className="bg-gradient-to-tr from-[#1a1c2c] via-[#2f3542] to-[#0f2027] text-white">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
 
-        {/* Company / Vision */}
         <div>
           <h2 className="text-3xl font-extrabold text-cyan-400 mb-4 tracking-wide">
             NovaSphere
@@ -22,7 +21,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Explore */}
         <div>
           <h3 className="text-xl font-semibold text-teal-300 mb-4 uppercase tracking-wider">
             Explore
@@ -35,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Resources */}
+
         <div>
           <h3 className="text-xl font-semibold text-teal-300 mb-4 uppercase tracking-wider">
             Resources
@@ -48,7 +46,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Connect */}
         <div>
           <h3 className="text-xl font-semibold text-teal-300 mb-4 uppercase tracking-wider">
             Connect
@@ -62,7 +59,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-10 py-5 text-center text-sm text-gray-400">
         &copy; {new Date().getFullYear()} NovaSphere Technologies. All rights reserved.
       </div>
