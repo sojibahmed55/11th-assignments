@@ -224,13 +224,15 @@
 
 // export default Header;
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router";
+import { IoMdSunny } from "react-icons/io";
+import { FaMoon } from "react-icons/fa";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
@@ -258,6 +260,19 @@ const Header = () => {
       });
   };
 
+
+  const [isDark, setIsDark] = useState(
+    localStorage.getItem("isDark") === "true"
+  );
+  useEffect(() => {
+    localStorage.setItem("isDark", isDark);
+  }, [isDark]);
+  const handleChange = () => {
+    setIsDark(!isDark);
+  };
+
+
+
   const navLinkStyle = ({ isActive }) =>
     `pb-1 border-b-2 transition-all duration-300 ${
       isActive
@@ -266,7 +281,25 @@ const Header = () => {
     }`;
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className=" shadow-md sticky top-0 z-50">
+      <div>
+          <label className="swap swap-rotate">
+            <input
+              type="checkbox"
+              className="theme-controller"
+              value="coffee"
+            />
+            <FaMoon className="swap-on h-6 w-6" />
+            <IoMdSunny className="swap-off h-6 w-6" />
+          </label>
+          <input
+            type="checkbox"
+            value="dark"
+            checked={isDark}
+            onChange={handleChange}
+            className="toggle theme-controller"
+          />
+        </div>
       <div className="max-w-[1600px] mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <h2 className="flex items-center gap-2">
@@ -373,6 +406,7 @@ const Header = () => {
                 Pending Assignments
               </NavLink>
             )}
+            
           </nav>
 
           <div>

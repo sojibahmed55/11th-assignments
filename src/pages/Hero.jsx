@@ -7,7 +7,7 @@ import animation from '../assets/lotties/animation.json'
 
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-br from-[#f8f9ff] to-[#fdfbfe] min-h-screen flex items-center justify-center px-6 md:px-20 relative overflow-hidden">
+    <div className=" min-h-screen flex items-center justify-center px-6 md:px-20 relative overflow-hidden">
       <div className="max-w-[1600px] w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
         {/* Left Text Section */}
@@ -41,7 +41,7 @@ const Hero = () => {
             </span>
             <span className="text-black">.</span>
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent text-lg">
             Submit, evaluate, and collaborate on assignments with friends.
             Perfect for MERN stack learners sharpening real-world dev skills.
           </p>
@@ -51,7 +51,7 @@ const Hero = () => {
                 Explore Assignments
               </button>
             </Link>
-            <Link to="/get-started">
+            <Link to="/create-assignment">
               <button className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition">
                 Get Started
               </button>
@@ -76,7 +76,7 @@ const Hero = () => {
 
       {/* Scroll to Explore with bounce effect */}
       <motion.div
-        className="absolute bottom-8 text-center text-sm text-gray-500"
+        className="absolute bottom-8 text-center text-xl text-emerald-600"
         animate={{ y: [0, -8, 0] }}
         transition={{
           repeat: Infinity,

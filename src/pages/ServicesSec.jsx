@@ -23,7 +23,7 @@ const ServicesSec = () => {
   ];
 
   return (
-    <div className="bg-[#f9f9fc] py-20 px-4 lg:px-0">
+    <div className=" py-20 px-4 lg:px-0">
       <div className="max-w-7xl mx-auto text-center">
         <p className="text-indigo-600 font-semibold tracking-wide uppercase mb-2">
           Excellent Service

@@ -46,7 +46,7 @@ const CreateAssignment = () => {
           type="text"
           name="title"
           placeholder="Assignment Title"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
@@ -54,7 +54,7 @@ const CreateAssignment = () => {
           name="description"
           placeholder="Assignment Description"
           rows="4"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         ></textarea>
 
@@ -62,7 +62,7 @@ const CreateAssignment = () => {
           type="number"
           name="marks"
           placeholder="Marks"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
@@ -70,13 +70,13 @@ const CreateAssignment = () => {
           type="text"
           name="thumbnail"
           placeholder="Thumbnail Image URL"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         />
 
         <select
           name="difficulty"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
         >
           <option value="">Select Difficulty</option>
@@ -100,7 +100,7 @@ const CreateAssignment = () => {
           <DatePicker
             selected={dueDate}
             onChange={(date) => setDueDate(date)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border text-black border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             dateFormat="yyyy-MM-dd"
             name="dueDate"
             required

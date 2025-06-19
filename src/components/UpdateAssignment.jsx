@@ -50,7 +50,7 @@ const UpdateAssignment = () => {
             name="title"
             defaultValue={title}
             placeholder="Assignment Title"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
 
@@ -59,7 +59,7 @@ const UpdateAssignment = () => {
             defaultValue={description}
             placeholder="Assignment Description"
             rows="4"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           ></textarea>
 
@@ -68,7 +68,7 @@ const UpdateAssignment = () => {
             name="marks"
             defaultValue={marks}
             placeholder="Marks"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
 
@@ -77,14 +77,14 @@ const UpdateAssignment = () => {
             name="thumbnail"
             defaultValue={thumbnail}
             placeholder="Thumbnail Image URL"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
 
           <select
             name="difficulty"
             defaultValue={difficulty}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-black border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           >
             <option value="">Select Difficulty</option>
