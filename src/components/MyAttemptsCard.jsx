@@ -1,6 +1,6 @@
 const MyAttemptsCard = ({ dt }) => {
   return (
-    <tr className="bg-gray-200  hover:bg-gray-300">
+    <tr className="">
       <td>{dt.title || "Untitled"}</td>
       <td>
         {dt.status === "reviewed" ? (

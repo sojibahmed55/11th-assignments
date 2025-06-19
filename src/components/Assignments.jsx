@@ -1,3 +1,37 @@
+// import React, { useState } from "react";
+// import { useLoaderData } from "react-router";
+// import AssignmentCard from "./AssignmentCard";
+// import GetUser from "../context/GetUser";
+
+// const Assignments = () => {
+//   const initialAssignments = useLoaderData();
+//   const [assignments, setAssignments] = useState(initialAssignments);
+//   const { user } = GetUser()
+
+//   return (
+//     <div>
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+//         {assignments?.map((assignment) => (
+//           <AssignmentCard
+//             key={assignment._id}
+//             assignment={assignment}
+//             userEmail={user?.email}
+//             assignments={assignments}
+//             setAssignments={setAssignments}
+//             onDelete={(id) => setAssignments((prev) => prev.filter(a => a._id !== id))}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+
+// export default Assignments;
+
+
+
+
 import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import AssignmentCard from "./AssignmentCard";
@@ -6,11 +40,13 @@ import GetUser from "../context/GetUser";
 const Assignments = () => {
   const initialAssignments = useLoaderData();
   const [assignments, setAssignments] = useState(initialAssignments);
-  const { user } = GetUser()
+  const { user } = GetUser();
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="max-w-[1600px] mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold text-center mb-10 text-indigo-700">📘 All Assignments</h1>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {assignments?.map((assignment) => (
           <AssignmentCard
             key={assignment._id}
@@ -18,15 +54,14 @@ const Assignments = () => {
             userEmail={user?.email}
             assignments={assignments}
             setAssignments={setAssignments}
-            onDelete={(id) => setAssignments((prev) => prev.filter(a => a._id !== id))}
+            onDelete={(id) =>
+              setAssignments((prev) => prev.filter((a) => a._id !== id))
+            }
           />
         ))}
       </div>
     </div>
   );
 };
-
-
-// asan?? hea vai ui thaka jaitasa na kno koi dekh
 
 export default Assignments;
