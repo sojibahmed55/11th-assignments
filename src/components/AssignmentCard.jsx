@@ -30,7 +30,7 @@ const AssignmentCard = ({ assignment, userEmail, onDelete, assignments, setAssig
       confirmButtonColor: "#dc2626",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/assignments/${_id}?email=${user?.email}`, {
+        axios.delete(`https://11th-assignment-server-three.vercel.app/assignments/${_id}?email=${user?.email}`, {
           headers: { Authorization: `Bearer ${user.accessToken}` }
         }).then((data) => {
           if (data.data.deletedCount > 0) {

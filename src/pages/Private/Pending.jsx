@@ -18,7 +18,7 @@ const Pending = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/pending", {
+      .get("https://11th-assignment-server-three.vercel.app/pending", {
         headers: { Authorization: `Bearer ${user.accessToken}` },
       })
       .then((res) => setData(res.data))
@@ -38,7 +38,7 @@ const Pending = () => {
 
     setLoading(true);
     axios
-      .patch(`http://localhost:5000/mark/${selectedAssignment._id}`, {
+      .patch(`https://11th-assignment-server-three.vercel.app/mark/${selectedAssignment._id}`, {
         id: selectedAssignment._id,
         givenMark: marks,
         feedback,

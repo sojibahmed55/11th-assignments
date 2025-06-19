@@ -17,7 +17,7 @@ const ViewAssignment = () => {
     if (!googleDocLink) return alert('Google Docs link must be provided!');
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/take-assignment', {
+      const res = await fetch('https://11th-assignment-server-three.vercel.app/take-assignment', {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${user.accessToken}`,

@@ -13,7 +13,7 @@ const MyAttempts = () => {
     setEmail(user?.email)
   }, [user])
   useEffect(() => {
-    axios.get(`http://localhost:5000/my-assignment/?email=${email}`,
+    axios.get(`https://11th-assignment-server-three.vercel.app/my-assignment/?email=${email}`,
       { headers: { Authorization: `Bearer ${token}`, } })
       .then((data) => setData(data.data));
   }, [email, token]);

@@ -42,16 +42,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/update-assignment/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+        loader: ({ params }) => fetch(`https://11th-assignment-server-three.vercel.app/assignments/${params.id}`),
         Component: UpdateAssignment,
       },
       {
         path: '/assignments/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+        loader: ({ params }) => fetch(`https://11th-assignment-server-three.vercel.app/assignments/${params.id}`),
         element: <RequireAuth ><ViewAssignment /></RequireAuth>,
       }, {
         path: '/assignments',
-        loader: () => fetch('http://localhost:5000/assignments'),
+        loader: () => fetch('https://11th-assignment-server-three.vercel.app/assignments'),
         Component: Assignments,
       }
     ],

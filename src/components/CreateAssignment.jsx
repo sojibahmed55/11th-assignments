@@ -17,7 +17,7 @@ const CreateAssignment = () => {
     submitAssignment.dueDate = dueDate.toISOString().split("T")[0];
     axios
       .post(
-        "http://localhost:5000/assignments",
+        "https://11th-assignment-server-three.vercel.app/assignments",
          submitAssignment ,
         { headers: { Authorization: `Bearer ${user.accessToken}` } }
       )

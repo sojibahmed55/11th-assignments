@@ -71,7 +71,7 @@ const AssignmentSection = () => {
   const [data, setData] = useState([]);
   console.log(data);
   useEffect(() => {
-    axios.get("http://localhost:5000/assignments").then((d) => setData(d.data));
+    axios.get("https://11th-assignment-server-three.vercel.app/assignments").then((d) => setData(d.data));
   }, []);
 
   return (
