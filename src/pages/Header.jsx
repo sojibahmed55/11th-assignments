@@ -282,7 +282,7 @@ const Header = () => {
 
   return (
     <header className=" shadow-md sticky top-0 z-50">
-      <div>
+      {/* <div>
           <label className="swap swap-rotate">
             <input
               type="checkbox"
@@ -299,7 +299,7 @@ const Header = () => {
             onChange={handleChange}
             className="toggle theme-controller"
           />
-        </div>
+        </div> */}
       <div className="max-w-[1600px] mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <h2 className="flex items-center gap-2">
@@ -332,8 +332,25 @@ const Header = () => {
             </NavLink>
           )}
         </nav>
+        <div>
+          <label className="swap swap-rotate">
+            <input
+              type="checkbox"
+              className="theme-controller"
+              value="coffee"
+            />
+            <FaMoon className="swap-on h-6 w-6" />
+            <IoMdSunny className="swap-off h-6 w-6" />
+          </label>
+          <input
+            type="checkbox"
+            value="dark"
+            checked={isDark}
+            onChange={handleChange}
+            className="toggle theme-controller"
+          />
+        </div>
 
-        {/* Desktop User Profile/Login */}
         <div className="hidden md:block">
           {user ? (
             <div className="group relative cursor-pointer inline-block">
@@ -381,9 +398,12 @@ const Header = () => {
             </div>
           )}
         </div>
+
+
+        
       </div>
 
-      {/* Mobile Menu */}
+
       {isMenuOpen && (
         <div className="md:hidden bg-white px-4 pb-4 space-y-4 shadow-lg">
           <nav className="flex flex-col gap-3 text-gray-700 font-medium">
