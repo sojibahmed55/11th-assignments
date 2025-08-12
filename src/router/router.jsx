@@ -10,6 +10,7 @@ import UpdateAssignment from "../components/UpdateAssignment";
 import MyAttempts from "../components/MyAttempts";
 import Pending from "../pages/Private/Pending";
 import RequireAuth from "../context/RequireAuth";
+import ErrorPages from "../pages/ErrorPages";
 
 const router = createBrowserRouter([
   {
@@ -53,8 +54,13 @@ const router = createBrowserRouter([
         path: '/assignments',
         loader: () => fetch('https://11th-assignment-server-three.vercel.app/assignments'),
         Component: Assignments,
-      }
+      },
     ],
+    
   },
+  {
+    path:'*',
+    Component: ErrorPages,
+  }
 ]);
 export default router;
