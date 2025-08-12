@@ -68,7 +68,7 @@ const Slider =()=> {
   };
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto select-none">
+    <section className="relative w-full max-w-7xl mx-auto select-none pt-9">
       <div className="relative overflow-hidden rounded-xl shadow-2xl aspect-[16/9]">
         {slides.map((slide, idx) => (
           <div
