@@ -37,8 +37,6 @@ const UpdateAssignment = () => {
 
   return (
     <div>
-      UpDaTe
-
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8 space-y-6">
         <h2 className="text-3xl font-extrabold text-center text-gray-800">
           Create Assignment
