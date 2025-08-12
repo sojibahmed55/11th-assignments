@@ -7,13 +7,14 @@ const NewsletterSignup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) return;
-    // Simulate API call or actual submission logic here
+
+    
     setSubmitted(true);
     setEmail("");
   };
 
   return (
-    <section className="py-16 ">
+    <section className="py-16">
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4 text-cyan-700">
           Stay Updated With Our Latest Assignments
